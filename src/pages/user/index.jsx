@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Outlet } from 'react-router-dom'
 
+import ChatBar from './ChatBar'
 import Header from './Header'
 import Sidebar from './Sidebar'
 
@@ -42,6 +43,7 @@ const UserRootPage = () => {
           <main className="flex-1 overflow-y-auto bg-[#f7f8fa] dark:bg-[#0f1318]">
             <Outlet context={{ query }} />
           </main>
+          <ChatBar />
         </div>
       </div>
     </div>
