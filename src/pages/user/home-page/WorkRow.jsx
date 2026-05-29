@@ -28,7 +28,7 @@ const WorkRow = ({ it }) => {
 
   return (
     <div className="-mx-3 flex cursor-pointer items-center gap-3 rounded-[9px] px-3 py-[11px] transition-colors hover:bg-[#eef1f5] dark:hover:bg-[#1e242d]">
-      <span className="grid size-[22px] flex-shrink-0 place-items-center rounded-[5px] text-white" style={{ background: type.color }}>
+      <span className="grid size-5.5 flex-shrink-0 place-items-center rounded-[5px] text-white" style={{ background: type.color }}>
         <Glyph className="size-[13px]" />
       </span>
 
@@ -47,7 +47,7 @@ const WorkRow = ({ it }) => {
         <span className={cn('whitespace-nowrap rounded-[5px] px-[9px] py-[3px] text-[11px] font-bold uppercase tracking-[0.04em]', STATUS_PILL[it.status])}>
           {status.label}
         </span>
-        <span className="grid size-[26px] place-items-center rounded-full text-[11px] font-bold text-white" style={{ background: who.color }} title={who.name}>
+        <span className="grid size-6.5 place-items-center rounded-full text-[11px] font-bold text-white" style={{ background: who.color }} title={who.name}>
           {who.init}
         </span>
       </div>

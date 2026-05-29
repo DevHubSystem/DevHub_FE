@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { cn } from '@/lib/utils'
 
-const iconBtn = 'size-[34px] text-[#4b5564] hover:bg-[#eef1f5] hover:text-[#1a1f29] dark:text-[#aeb8c4] dark:hover:bg-[#1e242d] dark:hover:text-[#e7edf4]'
+const iconBtn = 'size-8.5 text-[#4b5564] hover:bg-[#eef1f5] hover:text-[#1a1f29] dark:text-[#aeb8c4] dark:hover:bg-[#1e242d] dark:hover:text-[#e7edf4]'
 
 /**
  * Top app bar: brand, sidebar toggle, search, theme/help/notifications, avatar.
@@ -14,8 +14,8 @@ const iconBtn = 'size-[34px] text-[#4b5564] hover:bg-[#eef1f5] hover:text-[#1a1f
 const Header = ({ collapsed, onToggleSidebar, theme, onToggleTheme, query, setQuery }) => {
   return (
     <header className="z-30 flex flex-shrink-0 items-center gap-3.5 border-b border-[#e3e7ee] bg-[#eef1f5] px-4 py-4 dark:border-white/[0.07] dark:bg-[#0c0f13]">
-      <div className={cn('flex flex-shrink-0 items-center gap-2.5 transition-[width] duration-200', collapsed ? 'w-[48px]' : 'w-[216px]')}>
-        <div className="grid size-[30px] flex-shrink-0 place-items-center rounded-lg bg-[linear-gradient(140deg,#1d7afc,#475ff8)] text-white shadow-[0_3px_10px_rgba(29,122,252,0.4)]">
+      <div className={cn('flex flex-shrink-0 items-center gap-2.5 transition-[width] duration-200', collapsed ? 'w-12' : 'w-54')}>
+        <div className="grid size-7.5 flex-shrink-0 place-items-center rounded-lg bg-[linear-gradient(140deg,#1d7afc,#475ff8)] text-white shadow-[0_3px_10px_rgba(29,122,252,0.4)]">
           <Code2 className="size-[17px]" />
         </div>
         {!collapsed && (
@@ -29,13 +29,13 @@ const Header = ({ collapsed, onToggleSidebar, theme, onToggleTheme, query, setQu
         <PanelLeft className="size-[19px]" />
       </Button>
 
-      <div className="relative max-w-[540px] flex-1">
+      <div className="relative max-w-135 flex-1">
         <Search className="pointer-events-none absolute left-3 top-1/2 size-[17px] -translate-y-1/2 text-[#8b95a4] dark:text-[#6b7684]" />
         <Input
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search work, spaces, people…"
-          className="h-[38px] rounded-[9px] border-[#e3e7ee] bg-white pl-[38px] text-sm text-[#1a1f29] placeholder:text-[#8b95a4] focus-visible:border-[#1d7afc] focus-visible:ring-3 focus-visible:ring-[#1d7afc]/15 dark:border-white/[0.07] dark:bg-[#151a21] dark:text-[#e7edf4] dark:placeholder:text-[#6b7684]"
+          className="h-9.5 rounded-[9px] border-[#e3e7ee] bg-white pl-9.5 text-sm text-[#1a1f29] placeholder:text-[#8b95a4] focus-visible:border-[#1d7afc] focus-visible:ring-3 focus-visible:ring-[#1d7afc]/15 dark:border-white/[0.07] dark:bg-[#151a21] dark:text-[#e7edf4] dark:placeholder:text-[#6b7684]"
         />
       </div>
 

@@ -13,7 +13,7 @@ const RecentSpaces = () => {
 
   return (
     <section className="animate-in fade-in-0 slide-in-from-bottom-1 duration-300">
-      <div className="mb-4 mt-[34px] flex items-center justify-between">
+      <div className="mb-4 mt-8.5 flex items-center justify-between">
         <h2 className="text-base font-bold tracking-[-0.2px] text-[#1a1f29] dark:text-[#e7edf4]">Recent spaces</h2>
         <button type="button" className="rounded-md px-2 py-1.5 text-[13.5px] font-semibold text-[#1a6bde] hover:bg-[#1d7afc]/15 dark:text-[#77affd]">
           View all spaces
@@ -41,7 +41,7 @@ const RecentSpaces = () => {
             </button>
 
             <div className="flex items-center gap-3">
-              <div className="grid size-[38px] flex-shrink-0 place-items-center rounded-[9px] text-base font-bold text-white" style={{ background: s.color }}>
+              <div className="grid size-9.5 flex-shrink-0 place-items-center rounded-[9px] text-base font-bold text-white" style={{ background: s.color }}>
                 {s.letter}
               </div>
               <div>
@@ -63,7 +63,7 @@ const RecentSpaces = () => {
             </div>
 
             <div className="mt-3.5 flex items-center gap-[7px] border-t border-[#e3e7ee] pt-3 text-[13px] text-[#4b5564] dark:border-white/[0.07] dark:text-[#aeb8c4]">
-              <Columns3 className="size-[14px]" /> {s.boards} board{s.boards > 1 ? 's' : ''}
+              <Columns3 className="size-3.5" /> {s.boards} board{s.boards > 1 ? 's' : ''}
             </div>
           </div>
         ))}

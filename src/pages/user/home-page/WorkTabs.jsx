@@ -26,7 +26,7 @@ const WorkTabs = ({ query }) => {
   let body
   if (list.length === 0) {
     body = (
-      <div className="px-5 py-[60px] text-center text-[#8b95a4] dark:text-[#6b7684]">
+      <div className="px-5 py-15 text-center text-[#8b95a4] dark:text-[#6b7684]">
         <Inbox className="mx-auto mb-3 size-10 opacity-50" />
         <div>No matching work items.</div>
       </div>
@@ -56,7 +56,7 @@ const WorkTabs = ({ query }) => {
               type="button"
               onClick={() => setTab(t.id)}
               className={cn(
-                'relative mr-[18px] flex items-center gap-2 px-1 py-[11px] text-sm font-semibold transition-colors',
+                'relative mr-4.5 flex items-center gap-2 px-1 py-[11px] text-sm font-semibold transition-colors',
                 active
                   ? "text-[#1a1f29] after:absolute after:inset-x-0 after:-bottom-px after:h-0.5 after:rounded after:bg-[#1d7afc] after:content-[''] dark:text-[#e7edf4]"
                   : 'text-[#8b95a4] hover:text-[#4b5564] dark:text-[#6b7684] dark:hover:text-[#aeb8c4]',

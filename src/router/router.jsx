@@ -2,9 +2,14 @@
 import { lazy, Suspense } from 'react'
 import { createBrowserRouter, Navigate } from 'react-router-dom'
 
+import WorkspaceComingSoon from '@/pages/user/workspace/ComingSoon'
+
 const AuthenticationClientPage = lazy(() => import('@/pages/client/auth'))
 const UserRootPage = lazy(() => import('@/pages/user'))
 const UserHomePage = lazy(() => import('@/pages/user/home-page'))
+const WorkspaceManagement = lazy(() => import('@/pages/user/workspace'))
+const TaskManagement = lazy(() => import('@/pages/user/workspace/task-management'))
+const ProjectDevelopment = lazy(() => import('@/pages/user/workspace/project-development'))
 
 /** Fallback shown while a lazy page chunk loads. */
 const PageFallback = () => (
@@ -26,12 +31,30 @@ export const router = createBrowserRouter([
     element: withSuspense(<AuthenticationClientPage />),
   },
   {
-    path: '/home',
+    // Shared user-actor layout (top bar + sidebar) wrapping the home page and
+    // the per-space workspace shell. Children render into the layout's <Outlet>.
     element: withSuspense(<UserRootPage />),
     children: [
       {
-        index: true,
+        path: '/home',
         element: withSuspense(<UserHomePage />),
+      },
+      {
+        path: '/workspace/:spaceId',
+        element: withSuspense(<WorkspaceManagement />),
+        children: [
+          { index: true, element: <Navigate to="list" replace /> },
+          { path: 'summary', element: <WorkspaceComingSoon title="Summary" /> },
+          { path: 'list', element: withSuspense(<TaskManagement />) },
+          { path: 'board', element: <WorkspaceComingSoon title="Board" /> },
+          { path: 'backlog', element: <WorkspaceComingSoon title="Backlog" /> },
+          { path: 'development', element: withSuspense(<ProjectDevelopment />) },
+          { path: 'timeline', element: <WorkspaceComingSoon title="Timeline" /> },
+          { path: 'docs', element: <WorkspaceComingSoon title="Docs" /> },
+          { path: 'forms', element: <WorkspaceComingSoon title="Forms" /> },
+          { path: 'reports', element: <WorkspaceComingSoon title="Reports" /> },
+          { path: 'calendar', element: <WorkspaceComingSoon title="Calendar" /> },
+        ],
       },
     ],
   },
