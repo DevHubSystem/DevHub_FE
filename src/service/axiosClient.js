@@ -8,7 +8,7 @@ import { clearToken, getToken } from './tokenStorage'
  * and clears the token on 401.
  */
 const axiosClient = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:3000/api',
+  baseURL: import.meta.env.VITE_API_BASE_URL ?? '/api/dev-hub',
   headers: { 'Content-Type': 'application/json' },
 })
 

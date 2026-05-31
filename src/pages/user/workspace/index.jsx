@@ -1,21 +1,14 @@
 import {
   Calendar,
-  ClipboardList,
   Code2,
   Columns3,
   FileText,
-  GanttChart,
   Globe,
-  Import,
   List,
   ListOrdered,
-  Maximize2,
   MoreHorizontal,
-  Plus,
-  Share2,
   TrendingUp,
   Users,
-  Zap,
 } from 'lucide-react'
 import { NavLink, Outlet, useParams } from 'react-router-dom'
 

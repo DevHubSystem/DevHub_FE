@@ -10,6 +10,7 @@ const UserHomePage = lazy(() => import('@/pages/user/home-page'))
 const WorkspaceManagement = lazy(() => import('@/pages/user/workspace'))
 const TaskManagement = lazy(() => import('@/pages/user/workspace/task-management'))
 const ProjectDevelopment = lazy(() => import('@/pages/user/workspace/project-development'))
+const DocumentManagement = lazy(() => import('@/pages/user/workspace/document-management'))
 
 /** Fallback shown while a lazy page chunk loads. */
 const PageFallback = () => (
@@ -50,7 +51,7 @@ export const router = createBrowserRouter([
           { path: 'backlog', element: <WorkspaceComingSoon title="Backlog" /> },
           { path: 'development', element: withSuspense(<ProjectDevelopment />) },
           { path: 'timeline', element: <WorkspaceComingSoon title="Timeline" /> },
-          { path: 'docs', element: <WorkspaceComingSoon title="Docs" /> },
+          { path: 'docs', element: withSuspense(<DocumentManagement />) },
           { path: 'forms', element: <WorkspaceComingSoon title="Forms" /> },
           { path: 'reports', element: <WorkspaceComingSoon title="Reports" /> },
           { path: 'calendar', element: <WorkspaceComingSoon title="Calendar" /> },
